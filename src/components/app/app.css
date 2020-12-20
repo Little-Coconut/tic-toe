@@ -1,0 +1,8 @@
+.mainBlock{
+    display: flex;
+    justify-content: space-between;
+    max-width: 450px;
+    height: 450px;
+    flex-wrap: wrap; 
+    text-align: center;
+};

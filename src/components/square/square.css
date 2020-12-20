@@ -1,0 +1,13 @@
+.square{
+    border: 2px solid black;
+    background-color: antiquewhite;
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+}
+.squareCross{
+    background-color: aqua;
+}
+.squareZero{
+    background-color: violet;
+}
