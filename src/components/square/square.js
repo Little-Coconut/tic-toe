@@ -6,8 +6,8 @@ const Square = ({userClick, ClickData, symbol}) => {
 
   
 
-   const cross = '1';
-   const zero = '0';
+   const cross = 'X';
+   const zero = 'O';
    let renderElement;
 
 
@@ -19,7 +19,7 @@ const Square = ({userClick, ClickData, symbol}) => {
                 onClick={() => {
                     userClick(ClickData[0], ClickData[1])}}
                 className='squareNull square'>
-                    squareNull
+              
             </div>
         )
     } else if (symbol===cross) {
@@ -28,7 +28,7 @@ const Square = ({userClick, ClickData, symbol}) => {
                 onClick={() => {
                     userClick(ClickData[0], ClickData[1])}}
                 className='squareCross square'>    
-                squareCross
+                X
             </div>
         )
     } else if(symbol === zero) {
@@ -36,9 +36,8 @@ const Square = ({userClick, ClickData, symbol}) => {
             <div 
                 onClick={() => {
                     userClick(ClickData[0], ClickData[1])}}
-                className='squareZero square'
-            >
-                squareZero
+                className='squareZero square'>
+                 O 
             </div>
         )
     }
