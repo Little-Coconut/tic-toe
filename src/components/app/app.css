@@ -1,26 +1,108 @@
 .globalBlock{
-    max-width: 600px;
-    height: 500px;
-    background-color: #525F80;
+    width: 600px;
+    height: 80%;
+    background-color: #525F80; 
     display: flex;
     color: #E5E5E5;
     font-size: 20px;
     font-family: Verdana;
     padding: 0 auto;
+    position: relative;
 }
 
 .mainBlock{
     display: flex;
     justify-content: space-between;
-    max-width: 450px;
-    height: 450px;
+    width: 450px;
+    height:70%;
     flex-wrap: wrap; 
     text-align: center;
-    font-size: 120px;
-    background-color: #454160;
+    font-size: 100px;
+    background-color: #454160; 
+     position: relative;
 }
 
 .players {
-
    text-align: center; /* Выравнивание по ширине */
 }
+.newGame{
+    background-color: #454160; 
+    color: whitesmoke;
+}
+.square{
+    border: 4px solid #B54BC7; 
+    border-radius: 1px;
+    background-color:#454160 ;  
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    z-index: 1; 
+    position: relative;
+}
+.line{
+    z-index: 4;
+    background-color:aquamarine;
+    position: absolute;
+    visibility: hidden;
+}
+.line:nth-child(1){
+    
+    width: 10px;
+    height: 450px;
+    top:-150px;
+    left: 220px;
+    transform: rotate(90deg);
+}
+ .line:nth-child(2){
+    width: 10px;
+    height: 450px;
+    left: 220px;
+    transform: rotate(90deg);
+}
+.line:nth-child(3){
+    width: 10px;
+    height: 450px;
+    top:150px;
+    left: 220px;
+    transform: rotate(90deg);
+}
+.line:nth-child(4){
+    width: 10px;
+    height: 640px;
+    transform: rotate(-45deg);
+    top: -101px;
+    left: 212px;
+}
+.line:nth-child(5){
+    width: 10px;
+    height: 630px;
+    transform: rotate(45deg);
+    top: -90px;
+    left: 220px;
+}
+.line:nth-child(6){
+    width: 10px;
+    height: 550px;
+    top: -101px;
+    left: 70px; 
+}
+.line:nth-child(7){
+    width: 10px;
+    height: 550px;
+    top: -101px;
+    left: 222px;
+}
+.line:nth-child(8){
+    width: 10px;
+    height: 550px;
+    top: -101px;
+    left: 370px;
+}
+
+.visibility{
+    visibility:visible;
+}
+
+
+
+
