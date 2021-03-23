@@ -5,7 +5,6 @@ import './app.css';
 
 const App = () => {
 
-      /* наше состояние отвечающее за ходы игроков */
     const [state, updateState] = useState([
         {0: null, 1: null, 2: null}, 
         {3: null, 4: null, 5: null}, 
@@ -18,15 +17,7 @@ const App = () => {
     const [counter, updateCounter] = useState(0);
    
     const [winnerIndex, updateWinnerIndex] = useState();  
-    /**
-     * Обработка клика по ячейке, тобишь хода пользователя
-     * Принимает 2 параметра. Так как у нас абстакция на основе массива из 3 обьектов то мы имеем такое поведение
-     * 
-     * @param idx номер строки по которой кликнули - также это индекс массива 0, 1, или 2
-     * 
-     * @param prop порядковый номер ячеки - в действительности это свойство объекта
-     */
-    
+  
     const oldArr = [
         {0: null, 1: null, 2: null}, 
         {3: null, 4: null, 5: null}, 
@@ -34,11 +25,11 @@ const App = () => {
     ];
    
     const userClick = (idx, prop) => {
-        const newState = [...state]; // делаем копию текущего состояния 
-        newState[idx][prop] = user; // обновляем в копии нужную ячейку на основе текущего пользователя - поним что такое user =)  
-        updateState(newState); // обновляем состояние ходов 
+        const newState = [...state]; 
+        newState[idx][prop] = user; 
+        updateState(newState);  
         winner(newState);
-        // Важно это должно быть в конце - так как мы обновляем текущего пользователя - тобишь даем ход другому игроку.
+        
         updateUser(user === 'X' ? 'O' : 'X');
         updateCounter(counter + 1);
         if(counter >= 8){
@@ -49,9 +40,9 @@ const App = () => {
         } 
     };       
 
-        // тут ты должна сама все понять и сделать - Это очень важно!
+        
     const winner = (gameState) => {
-        //функция на победителя
+        
          let lines = [
             [0, 1, 2],
             [3, 4, 5],
@@ -112,15 +103,12 @@ const App = () => {
             }
         };
     
-     /**
-     * Функция котороя помогает нам отрисовать все ячейки
-     */
+    
     const renderSquareItem = () => {
-        const squareItems = []; // массив который должен состоять из элеметов Square
-        state.forEach( (el, idx) => { // проходим по массиву ячеек - тобишь мы проходим по состоянию
-            // помним что у нас каждый елемент массива это объект - поэтому мы используем функцию keys что-бы она нам вернула нам массив имен всех свойств данного объекта
-            Object.keys(el).forEach((key) => {  // проходимся по всем именам обьекта 
-                squareItems.push( // пушим наш элемент в массив 
+        const squareItems = []; 
+        state.forEach( (el, idx) => { 
+            Object.keys(el).forEach((key) => { 
+                squareItems.push( 
                     <Square
                         userClick={userClick}
                         ClickData={ [idx, key] }
